@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: learnk8s
+  jpa:
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+  data:
+    web:
+      pageable:
+        one-indexed-parameters: true
+  flyway:
+    locations: classpath:db/migration/{vendor}
