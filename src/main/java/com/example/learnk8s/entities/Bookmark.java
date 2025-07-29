@@ -9,7 +9,6 @@ import java.time.Instant;
 
 @Entity
 @Table(name = "Bookmark")
-@Data
 public class Bookmark {
 
     /*
@@ -47,5 +46,37 @@ public class Bookmark {
         this.title = title;
         this.url = url;
         this.createAt = Instant.now();
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
+    }
+
+    public String getCreateAt() {
+        return createAt != null ? getCreateAt().toString() : null;
+    }
+
+    public void setCreateAt(Instant createAt) {
+        this.createAt = createAt;
     }
 }

@@ -1,5 +1,6 @@
 package com.example.learnk8s.controller;
 
+import com.example.learnk8s.dto.model.BookmarkDTO;
 import com.example.learnk8s.entities.Bookmark;
 import com.example.learnk8s.service.BookmarkService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,8 +21,7 @@ public class BookmarkController {
     private BookmarkService bookmarkService;
 
     @GetMapping
-    public ResponseEntity<?> getBookmarks() {
-        return ResponseEntity.ok(bookmarkService.findAllBookmarks());
+    public ResponseEntity<?> getBookmarks(Pageable pageable) {
+        return ResponseEntity.ok(bookmarkService.findAllBookmarks(pageable));
     }
-
 }
